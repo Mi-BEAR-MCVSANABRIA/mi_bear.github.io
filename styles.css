@@ -1,0 +1,123 @@
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: consolas, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* ESTRUCTURA Y RESPONSIVIDAD PRINCIPAL */
+
+/* Contenedor central: Limita el ancho del contenido para legibilidad en pantallas grandes */
+.container {
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto;    /* Centra el contenedor */
+    padding: 0 20px;   /* Padding lateral para evitar que el contenido toque los bordes en móviles */
+    width: 100%;       /* Asegura que ocupe el 100% del ancho disponible */
+}
+
+/* Sección de Ancho Completo */
+.full-width-section {
+    width: 100%;
+    padding: 20px 0; /* Padding vertical por defecto */
+    text-align: center;
+}
+
+/* ESTILOS DE SECCIÓN ESPECÍFICOS */
+
+/* Hero (Encabezado) */
+.hero {
+    background-color: #007bff;
+    color: white;
+    padding: 80px 0;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Sección de Contenido (Abstract y Bibliografía) */
+.content-section {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.content-section h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+    font-size: 1.8em;
+}
+
+.content-section p, .content-section ul {
+    text-align: left; /* Alineación del texto dentro del container */
+    max-width: 800px; /* Ancho máximo del texto para mejor lectura */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bibliography-section ul {
+    list-style: disc inside;
+    padding-left: 0; /* Asegura que la lista se alinee correctamente */
+}
+
+.bibliography-section li {
+    margin-bottom: 10px;
+}
+
+/* MAPA RESPONSIVE (CRUCIAL) */
+.map-section {
+    background-color: #eee;
+    padding: 40px 0 0 0; /* Mantenemos el padding superior, quitamos el inferior */
+}
+
+.map-responsive {
+    /* Esta técnica usa padding-bottom para mantener una proporción de aspecto 16:9 o similar */
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 * 100) */
+    position: relative;
+    height: 0;
+    margin-top: 20px; /* Espacio entre el título y el mapa */
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
+}
+
+/* Pie de Página */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* MEDIA QUERIES para Móviles */
+@media (max-width: 768px) {
+    /* Ajustes para pantallas de tabletas y móviles */
+    
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .full-width-section {
+        padding: 30px 0; /* Menos padding vertical en móviles */
+    }
+
+    /* Reducir el padding lateral del container en pantallas muy pequeñas si es necesario, 
+       pero 20px suele ser un buen mínimo. */
+    .container {
+        padding: 0 15px; 
+    }
+}
